@@ -508,13 +508,107 @@ public static void main(String[] args) {
                 
                 
                 case 7:
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    if(!list_caso.isEmpty()){  
+                        System.out.println("HOMICIDIOS: ");
+                        for (int i = 0; i < list_caso.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("HOMICIDIO")) {
+                                System.out.println(list_caso);
+                            }
+                        }
+                        System.out.println("SECUESTROS: ");
+                        for (int i = 0; i < list_caso.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("SECUESTRO")) {
+                                System.out.println(list_caso);
+                            }
+                        }
+                        System.out.println("ROBOS: ");
+                        for (int i = 0; i < list_caso.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("ROBO")) {
+                                System.out.println(list_caso);
+                            }
+                        }
+                    }
+                    if(list_caso.isEmpty()){
+                        System.out.println("NO HAY DATOS EN LA LISTA, POR FAVOR INGRESE ELEMENTOS");
+                    }
+                break;
                 
-                break;
-  
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 case 8:
-                 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    if (!list_caso.isEmpty()){ 
+                        ArrayList<Clase_casos> RESUELTOS = new ArrayList();
+                        for (int i = 0; i < list_caso.size(); i++) {
+                            if (((Clase_casos)list_caso.get(i)).getESTADO().equals("RESUELTO")){
+                                RESUELTOS.add((Clase_casos)list_caso.get(i));
+                            }
+                        }
+                        System.out.println("HOMICIDIOS RESUELTOS: ");
+                        int C0=1;
+                        for (int i = 0; i < RESUELTOS.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("HOMICIDIO")) {
+                                System.out.println(C0+") "+list_caso);
+                            }
+                        }
+                        System.out.println("SECUESTROS RESULTOS: ");
+                        int C1=1;
+                        for (int i = 0; i < RESUELTOS.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("SECUESTRO")) {
+                                System.out.println(C1+") "+list_caso);
+                            }
+                        }
+                        System.out.println("ROBOS RESUELTOS: ");
+                        int C2=1;
+                        for (int i = 0; i < RESUELTOS.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("ROBO")) {
+                                System.out.println(C2+") "+list_caso);
+                            }
+                        }
+                    }
+                    if(list_caso.isEmpty()){
+                        System.out.println("NO HAY DATOS EN LA LISTA, POR FAVOR INGRESE ELEMENTOS");
+                    }
                 break;
-
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 case 9:
                
                 break;
