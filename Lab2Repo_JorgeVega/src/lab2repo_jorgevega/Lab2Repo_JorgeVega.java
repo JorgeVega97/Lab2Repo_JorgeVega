@@ -160,10 +160,116 @@ public static void main(String[] args) {
                     
                     
                 case 3:
-
-
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    if(!list_detec.isEmpty()){
+                    String lll="";
+                    for (int i = 0; i < list_detec.size(); i++) {
+                        lll += "DECTECTIVES:\n" + list_detec.indexOf(list_detec.get(i)) + " - " + list_detec.get(i);
+                    }
+                    System.out.println("1. NOMBRE\n"
+                            + "2. EDAD\n"
+                            + "3.NACIONALIDAD\n"
+                            + "4.ANTIGUEDAD LABORAL\n"
+                            + "5.Nivel\n"
+                            +"ELIJA LA OPCION A MODIFICAR: ");
+                    int MODIFICAR = sc.nextInt();
+                    switch (MODIFICAR) {
+                        case 1:
+                            System.out.println("INGRESE POSICION A MODIFICAR:");
+                            int posii = sc.nextInt();
+                            if (posii >= 0 && posii < list_detec.size()) {
+                                System.out.println("IINGRESE NOMBRE: ");
+                                NOM = sc.next();
+                                ((CLase_detectives) list_detec.get(posii)).setNOMBRE(NOM);
+                                System.out.println("EL NOMBRE SE MODIFICO DE MANERA CORRECTA");
+                            } else {
+                                System.out.println("LA POSICION NO EXITE");
+                            }
+                        break;
+                        case 2:
+                            System.out.println("INGRESE EL INDICE DE LA POSICION A MODIFICAR:");
+                            int po = sc.nextInt();
+                            if (po >= 0 && po < list_detec.size()) {
+                                System.out.println("INGRESE EDAD: ");
+                                EDAD = sc.nextInt();
+                                while(EDAD<0){
+                                    System.out.println("SOLO SE ACEPTAN NUMEROS POSITIVOS\n"
+                                + "INTRODUZCA DE NUEVO:");
+                                    EDAD= sc.nextInt();
+                                }
+                                ((CLase_detectives) list_detec.get(po)).setEDAD(EDAD);
+                                System.out.println("LA EDAD DE MODIFICO DE MANERA CORRECTA");
+                            } else {
+                                System.out.println("LA POSICION NO EXISTE");
+                            }
+                        break;
+                        case 3:
+                            System.out.println("INGRESE EL INDICE DE LA POSICION A MODIFICAR:");
+                            int posc = sc.nextInt();
+                            if (posc >= 0 && posc < list_detec.size()) {
+                                System.out.println("INGRESE NACIONALIDAD: ");
+                                NACI = sc.next();
+                                ((CLase_detectives) list_detec.get(posc)).setNACIONALIDAD(NACI);
+                                System.out.println("LA NACIONALIDAD SE MODIFICO DE FORMA CORRECTA");
+                            } else {
+                                System.out.println("LA POSICION NO EXISTE");
+                            }
+                            break;
+                        case 4:
+                            System.out.println("INGRESE EL INDICE DE LA POSICION A MODIFICAR:");
+                            int posicion = sc.nextInt();
+                            if (posicion >= 0 && posicion < list_detec.size()) {
+                                System.out.println("INGRESE LA CANTIDAD DE ANOS DE ANTIGUEDAD: ");
+                                ANTI = sc.nextInt();
+                                while(ANTI<0){
+                                    System.out.println("SOLO SE ACEPTAN NUMEROS POSITIVOS\n"
+                                + "INTRODUZCA DE NUEVO:");
+                                    ANTI= sc.nextInt();
+                                }
+                                ((CLase_detectives) list_detec.get(posicion)).setANTIGUEDAD(ANTI);
+                                System.out.println("LA ANTIGUEDAD LABORAL SE MODIFICO DE MANERA CORRECTA");
+                            } else {
+                                System.out.println("LA POSICION NO EXISTE");
+                            }
+                        break;
+                        case 5:
+                            System.out.println("INGRESE EL INDICE DE LA POSICION QUE DESEA MODIFICAR:");
+                            int poscio = sc.nextInt();
+                            if (poscio >= 0 && poscio < list_detec.size()) {
+                                System.out.println("INGRESE UN NIVEL DETECTIVE: ");
+                                ESCALA = sc.nextInt();
+                                ((CLase_detectives) list_detec.get(poscio)).setNIVEL(ESCALA);
+                                System.out.println("NIVEL DE DETECTIVE SE MODIFICO DE FORMA CORRECTA");
+                            } else {
+                                System.out.println("LA POSICION NO EXISTE");
+                            }
+                        break;
+                        }
+                    }
+                    if (list_detec.isEmpty()) {
+                        System.out.println("NO HAY DATOS EN LA LISTA, AGREGUE PORFAVOR ELEMENTOS A LA LISTA");
+                    }
                 break;
-
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 case 4:
 
                 break;
