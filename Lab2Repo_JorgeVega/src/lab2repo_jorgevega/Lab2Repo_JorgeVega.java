@@ -271,13 +271,107 @@ public static void main(String[] args) {
                 
                 
                 case 4:
-
-                break;
-
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+      
+                    
+                    
+    
+                    if(!list_detec.isEmpty()){
+                        String VACI = "";
+                        for (int i = 0; i < list_detec.size(); i++) {
+                            VACI += "DETECTIVES:\n" + list_detec.indexOf(list_detec.get(i)) + " - " + list_detec.get(i);
+                        }
+                        System.out.println(VACI);
+                    }
+                    if (list_detec.isEmpty()) {
+                        System.out.println("NO HAY DATOS EN LA LISTA, AGREGUE PORFAVOR ELEMENTOS A LA LISTA");
+                    }
+                    break;
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 case 5:
-
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    System.out.println("1. HOMICIDIO\n"
+                            + "2. ROBO\n"
+                            + "3. SECUESTRO\n\n"
+                            +"ELIJA LA EL TIPO DE CASO: ");
+                    int TIPO = sc.nextInt();
+                    while (TIPO<0 || TIPO>3){
+                        System.out.println("POR FAVOR INGRESE UNA OPCION QUE SEA VALIDA: ");
+                        TIPO = sc.nextInt();
+                    }
+                    String tipo = "";
+                    switch (TIPO) {
+                        case 1:
+                            tipo = "HOMICIDIO";
+                            break;
+                        case 2:
+                            tipo = "ROBO";
+                            break;
+                        case 3:
+                            tipo = "SECUESTRO";
+                            break;
+                    }
+                    System.out.println(
+                            "1)EN PROCESO\n"
+                            + "2)RESUELTO\n"+
+                            "ELIJAN EL ESTADO DEL CASO:\n");
+                    int LUGAR = sc.nextInt();
+                    while (LUGAR<0 || LUGAR>2){
+                        System.out.println("LA OPCION ES INCORRECTA, INGRESE UNA VALIDA");
+                        LUGAR = sc.nextInt();
+                    }
+                    String STATUS = "";
+                    switch (LUGAR) {
+                        case 1:
+                            STATUS = "EN PROCESO";
+                            break;
+                        case 2:
+                            STATUS = "RUSUELTO";
+                            break;
+                    }
+                    String CARGO;
+                    System.out.println("INGRESE EL INDICE DE LA POSICION DEL DETECTIVE ENCARGADO DEL CASO:    ");
+                    int elemento = sc.nextInt();
+                    if (elemento >= 0 && elemento < list_detec.size()) {
+                        CARGO = ((CLase_detectives) list_detec.get(elemento)).getNOMBRE();
+                        list_caso.add(new Clase_casos(tipo, STATUS, CARGO));
+                    } else {
+                        System.out.println("LA POSICION NO EXISTE");
+                    }
                 break;
-
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 case 6:
 
                 break;
