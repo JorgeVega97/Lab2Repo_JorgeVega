@@ -76,10 +76,91 @@ public static void main(String[] args) {
                     
                     
                 case 2:
-
-                break;
-
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    if(!list_detec.isEmpty()){
+                        String acu="";
+                        for (int i = 0; i < list_detec.size(); i++) {
+                            acu += "DETECTIVES:\n" + list_detec.indexOf(list_detec.get(i)) + " - " + list_detec.get(i);
+                        }System.out.print("INGRESE EL INDICE DE LA POSICION DEL DETECTIVE: ");
+                        int ppp = sc.nextInt();
+                        if (ppp >= 0 && ppp < list_detec.size()) {
+                            String nom = ((CLase_detectives) list_detec.get(ppp)).getNOMBRE();
+                            for (int i = 0; i < list_caso.size(); i++) {
+                                if (((Clase_casos) list_caso.get(i)).getNOMBRE().equals(nom)) {
+                                    String tipoo = ((Clase_casos) list_caso.get(i)).getTIPO();
+                                    int second_Level = 1;
+                                    if (tipoo == "HOMICIDIO") {
+                                        int level = 1;
+                                        CLase_detectives kk = ((CLase_detectives) list_detec.get(0));
+                                        for (int j = 0; j < list_detec.size(); j++) {
+                                            if (((CLase_detectives) list_detec.get(j)).getNIVEL() > level) {
+                                                level = ((CLase_detectives) list_detec.get(j)).getNIVEL();
+                                                kk = ((CLase_detectives) list_detec.get(j));
+                                            }
+                                        }
+                                        second_Level = kk.getNIVEL() - 1;
+                                        String nomm = kk.getNOMBRE();
+                                        ((Clase_casos) list_caso.get(i)).setNOMBRE(nomm);
+                                    }
+                                    if (tipoo == "ROBO") {
+                                        int level = 1;
+                                        CLase_detectives D = ((CLase_detectives) list_detec.get(0));
+                                        for (int j = 0; j < list_detec.size(); j++) {
+                                            if (((CLase_detectives) list_detec.get(j)).getNIVEL() <= level) {
+                                                level = ((CLase_detectives) list_detec.get(j)).getNIVEL();
+                                                D = ((CLase_detectives) list_detec.get(j));
+                                            }
+                                        }
+                                        String name = D.getNOMBRE();
+                                        ((Clase_casos) list_caso.get(i)).setNOMBRE(name);
+                                    }
+                                    if (tipoo == "SECUESTRO") {
+                                        boolean second = false;
+                                        CLase_detectives D = ((CLase_detectives) list_detec.get(0));
+                                        while (!second) {
+                                            for (int j = 0; j < list_detec.size(); j++) {
+                                                if (((CLase_detectives) list_detec.get(j)).getNIVEL() == second_Level) {
+                                                    D = ((CLase_detectives) list_detec.get(j));
+                                                    second = true;
+                                                }
+                                            }
+                                            second_Level--;
+                                        }
+                                        String namm = D.getNOMBRE();
+                                        ((Clase_casos) list_caso.get(i)).setNOMBRE(namm);
+                                    }
+                                }
+                            }
+                            list_detec.remove(ppp);
+                            System.out.println("SE ELIMINO DE MANERA CORRECTA");
+                        } else {
+                            System.out.println("LA POSICION NO EXISTE");
+                        }
+                    }
+                    if(list_detec.isEmpty()){
+                        System.out.println("NO HAY DATOS EN LA LISTA, AGREGUE ELEMENTO PORFAVOR");
+                    }
+                    break;
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 case 3:
+
 
                 break;
 
