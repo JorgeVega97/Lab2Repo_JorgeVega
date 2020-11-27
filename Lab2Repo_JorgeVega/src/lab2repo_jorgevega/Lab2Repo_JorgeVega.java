@@ -610,7 +610,52 @@ public static void main(String[] args) {
                 
                 
                 case 9:
-               
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    if(!list_caso.isEmpty()){ 
+                        ArrayList<Clase_casos> FALTAN = new ArrayList();
+                        for (int i = 0; i < list_caso.size(); i++) {
+                            if (((Clase_casos)list_caso.get(i)).getESTADO().equals("En proceso")){
+                                FALTAN.add((Clase_casos)list_caso.get(i));
+                            }
+                        }
+                        System.out.println("HOMICIDIOS EN PROCESO: ");
+                        int CENTI=1;
+                        for (int i = 0; i < FALTAN.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("HOMICIDIO")) {
+                                System.out.println(CENTI+") "+list_caso);
+                            }
+                        }
+                        System.out.println("SECUESTROS EN PROCESO: ");
+                        int CENTI2=1;
+                        for (int i = 0; i < FALTAN.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("SECUESTRO")) {
+                                System.out.println(CENTI2+") "+list_caso);
+                            }
+                        }
+                        System.out.println("ROBOS EN PROCESO: ");
+                        int CENTI3=1;
+                        for (int i = 0; i < FALTAN.size(); i++) {
+                            if (((Clase_casos) list_caso.get(i)).getTIPO().equals("ROBO")) {
+                                System.out.println(CENTI3+") "+list_caso);
+                            }
+                        }
+                        if(list_caso.isEmpty()){
+                            System.out.println("NO HAY DATOS EN LA LISTA, POR FAVOR INGRESE ELEMENTOS");
+                        }
+                    }
+                    if(list_caso.isEmpty()){
+                        System.out.println("NO HAY DATOS EN LA LISTA, POR FAVOR INGRESE ELEMENTOS");
+                    }
                 break;
                 default: System.out.println("LA OPCION NO ES VALIDA, VUELVA A INTENTAR");
             }}}}
