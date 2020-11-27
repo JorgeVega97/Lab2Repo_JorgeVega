@@ -373,9 +373,140 @@ public static void main(String[] args) {
                 
                 
                 case 6:
-
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    if(!list_caso.isEmpty()){
+                        for (int i = 0; i < list_caso.size(); i++) {
+                            System.out.println((i+1)+") "+(Clase_casos)list_caso.get(i));
+                        }
+                        System.out.println("INGRESE EL INDICE DE LA POSICION DEL CASO QUE DESEA MODIFICAR");
+                        int OP3 = sc.nextInt();
+                        while(OP3<0||OP3>list_caso.size()){
+                            System.out.println("LA POSICION NO EXISTE");
+                            for (int i = 0; i < list_caso.size(); i++) {
+                                System.out.println((i+1)+") "+(Clase_casos)list_caso.get(i));
+                            }
+                            System.out.println("INGRESE POSICION VALIDA");
+                            OP3 = sc.nextInt();
+                        }
+                        System.out.println("1. TIPO DE CASO\n"
+                                + "2. ESTADO\n"
+                                + "3. DETECTIVE A CARGO\n"
+                                + "ELIJA LA OPCION A MODIFICAR");
+                        int mod = sc.nextInt();
+                        switch(mod){
+                            case 1:
+                                for (int i = 0; i < list_detec.size(); i++) {
+                                    System.out.println((i+1)+") "+list_detec.get(i));
+                                }
+                                System.out.println("INGRESE LA POSICION DEL ESTADO QUE QUIERE ASIGNAR");
+                                int CENTI = sc.nextInt()-1;
+                                while(CENTI<0||CENTI>list_detec.size()){
+                                    System.out.println("LA POSICION NO EXISTE, INTENTE DE OTRA VEZ"); 
+                                    CENTI = sc.nextInt()-1;
+                                }
+                                System.out.println("1. HOMICIDIO\n"
+                                + "2. ROBO\n"
+                                + "3. SECUESTRO\n"
+                                + "INGRESE TIPO DE CASO");
+                                int TIPE = sc.nextInt();
+                                while (TIPE<0 || TIPE>3){
+                                    System.out.println("ERROR, INGRESE UNA OPCION VALIDA: ");
+                                    TIPE = sc.nextInt();
+                                }
+                                switch(TIPE){
+                                    case 1:
+                                        ((Clase_casos)list_caso.get(TIPE)).setTIPO("HOMICIDIO");
+                                    break;
+                                    case 2:
+                                        ((Clase_casos)list_caso.get(TIPE)).setTIPO("ROBO");
+                                    break;
+                                    case 3:
+                                        ((Clase_casos)list_caso.get(TIPE)).setTIPO("SECUESTRO");
+                                    break;
+                                }
+                            break;
+                            case 2:
+                                for (int i = 0; i < list_detec.size(); i++) {
+                                    System.out.println((i+1)+") "+list_detec.get(i));
+                                }
+                                System.out.println("INGRESE POSICION DEL ESTADO QUE QUIERE ASIGNAR");
+                                int POSIS = sc.nextInt()-1;
+                                while(POSIS<0||POSIS>list_detec.size()){
+                                    System.out.println("LA POSICION NO EXISTE, INTENTE DE NUEVO");
+                                    POSIS = sc.nextInt()-1;
+                                }
+                                System.out.println("1. EN PROCESO\n"
+                                + "2. RESUELTO\n"
+                                + "ELIJA EL ESTADO DEL CASO: ");
+                                int NEWP = sc.nextInt();
+                                if (NEWP<0 || NEWP>2){
+                                    System.out.println("LA OPCION ES INVALIDA,PORFAVOR INGRESE UNA VALIDA");
+                                    NEWP = sc.nextInt();
+                                }
+                                switch (NEWP) {
+                                    case 1:
+                                        ((Clase_casos)list_caso.get(NEWP)).setESTADO("EN PROCESO");
+                                    break;
+                                    case 2:
+                                        ((Clase_casos)list_caso.get(NEWP)).setESTADO("RESUELTO");
+                                    break;
+                                }
+                            break;
+                            case 3:
+                                for (int i = 0; i < list_detec.size(); i++) {
+                                    System.out.println((i+1)+") "+list_detec.get(i));
+                                }
+                                System.out.println("INGRESE LA POSICION DEL NUEVO DETECTIVE QUE VA A ASIGANAR: ");
+                                int P = sc.nextInt()-1;
+                                while(P<0||P>list_detec.size()){
+                                    System.out.println("LA POSICION NO EXISTE");
+                                    for (int i = 0; i < list_detec.size(); i++) {
+                                        System.out.println((i+1)+") "+list_detec.get(i));
+                                    }
+                                    System.out.println("INTRODUZCA LA POSICION OTRA VEZ");
+                                    P = sc.nextInt()-1;
+                                }
+                                String nuevoN = ((CLase_detectives)list_detec.get(P)).getNOMBRE();
+                                ((Clase_casos)list_caso.get(OP3)).setNOMBRE(nuevoN);
+                                System.out.println("DETECTIVE ASIGANDO DE FORMA CORRECTA");
+                            break;
+                        }
+                    }
+                    if(list_caso.isEmpty()){
+                        System.out.println("NO HAY DATOS EN LA LISTA, POR FAVOR INGRESE ELEMENTOS");
+                    }
                 break;
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+ 
+                
 
+                
+                
+                
+                
+                
                 case 7:
                 
                 break;
