@@ -31,6 +31,7 @@ public static void main(String[] args) {
             System.out.println("7)LISTAR CASOS");
             System.out.println("8)LISTAR LOS CASOS RESUELTOS");
             System.out.println("9)LISTAR LOS CASOS EN PROCESO");
+            System.out.println("10)SALIR");
             System.out.println("         ");
             System.out.print("ELIJA LA OPCION: ");
             int OP1 = sc.nextInt();
@@ -350,7 +351,7 @@ public static void main(String[] args) {
                             STATUS = "EN PROCESO";
                             break;
                         case 2:
-                            STATUS = "RUSUELTO";
+                            STATUS = "RESUELTO";
                             break;
                     }
                     String CARGO;
@@ -656,6 +657,18 @@ public static void main(String[] args) {
                     if(list_caso.isEmpty()){
                         System.out.println("NO HAY DATOS EN LA LISTA, POR FAVOR INGRESE ELEMENTOS");
                     }
+                break;
+                
+                
+                
+                
+                
+                
+                
+
+                case 10:
+                    
+                    op=false;
                 break;
                 default: System.out.println("LA OPCION NO ES VALIDA, VUELVA A INTENTAR");
             }}}}

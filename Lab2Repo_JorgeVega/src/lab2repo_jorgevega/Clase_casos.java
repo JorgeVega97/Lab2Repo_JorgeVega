@@ -6,6 +6,9 @@ Jorge Vega
 public class Clase_casos {
     private String TIPO,ESTADO, NOMBRE;
 
+    public Clase_casos() {
+    }
+
     public Clase_casos(String TIPO, String ESTADO, String NOMBRE) {
         this.TIPO = TIPO;
         this.ESTADO = ESTADO;
