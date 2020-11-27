@@ -311,9 +311,9 @@ public static void main(String[] args) {
                     
                     
                     
-                    
-                    
-                    
+                    int CANT;
+                    String LUGA = "";
+                    String TIPO_ARMA ="";
                     
                     System.out.println("1. HOMICIDIO\n"
                             + "2. ROBO\n"
@@ -340,13 +340,13 @@ public static void main(String[] args) {
                             "1)EN PROCESO\n"
                             + "2)RESUELTO\n"+
                             "ELIJAN EL ESTADO DEL CASO:\n");
-                    int LUGAR = sc.nextInt();
-                    while (LUGAR<0 || LUGAR>2){
+                    int OTHER = sc.nextInt();
+                    while (OTHER<0 || OTHER>2){
                         System.out.println("LA OPCION ES INCORRECTA, INGRESE UNA VALIDA");
-                        LUGAR = sc.nextInt();
+                        OTHER = sc.nextInt();
                     }
                     String STATUS = "";
-                    switch (LUGAR) {
+                    switch (OTHER) {
                         case 1:
                             STATUS = "EN PROCESO";
                             break;
@@ -359,10 +359,29 @@ public static void main(String[] args) {
                     int elemento = sc.nextInt();
                     if (elemento >= 0 && elemento < list_detec.size()) {
                         CARGO = ((CLase_detectives) list_detec.get(elemento)).getNOMBRE();
-                        list_caso.add(new Clase_casos(tipo, STATUS, CARGO));
+                        if (tipo=="HOMICIDIO"){
+                            System.out.println("INGRESE LUGAR DEL HOMICIDIO: ");
+                            LUGA = sc.next();
+                         list_caso.add(new Hija_Homicidio(LUGA,tipo, STATUS, CARGO)); 
+                   
+                        }if (tipo=="SECUESTRO"){
+                        System.out.println("INGRESE LA CANTIDAD DE IMPLICADOS: ");
+                        CANT = sc.nextInt();
+                        list_caso.add(new Hija_Secuestro(CANT,tipo, STATUS, CARGO)); 
+                  
+                    }if (tipo=="ROBO"){
+                        System.out.println("INGRESE EL TIPO DE ARMA (FUEGO/BLANCA): ");
+                            TIPO_ARMA = sc.next();
+                        list_caso.add(new Hija_Robo(TIPO_ARMA,tipo, STATUS, CARGO)); 
+                    }
                     } else {
                         System.out.println("LA POSICION NO EXISTE");
                     }
+                    
+                    
+                    
+                    
+                    
                 break;
                 
                 
@@ -429,6 +448,8 @@ public static void main(String[] args) {
                                 }
                                 switch(TIPE){
                                     case 1:
+                                        
+                                        
                                         ((Clase_casos)list_caso.get(TIPE)).setTIPO("HOMICIDIO");
                                     break;
                                     case 2:
